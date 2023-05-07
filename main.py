@@ -323,13 +323,12 @@ def insert_into_sales_channel():
     return result[:-1] + ";"
 
 def insert_into_customer(n):
-    result = "INSERT INTO [Customer] ([CustomerID], [FullName], [Country], [City], [Age], [Gender]) VALUES\n"
-    for i in range(1, n+1):
-        country = random.choice(list(cities))
+    result = "INSERT INTO [Customer] ([FullName], [CityID], [Age], [Gender]) VALUES\n"
+    for _ in range(1, n+1):
         gender = random.choice([M, F])
-        result += f"\t({i}, '{random.choice(male_names if gender == M else female_names)} {random.choice(male_names)}', '{country}', '{random.choice(cities[country])}', {random.choice(list(range(18, 60)))}, '{gender}'),\n"
+        result += f"\t('{random.choice(male_names if gender == M else female_names)} {random.choice(male_names)}', {random.choice(list(range(1,201)))}, {random.choice(list(range(18, 60)))}, '{gender}'),\n"
 
-    return result + ";"
+    return result[:-2] + ";"
 
 def insert_into_product():
     result = "INSERT INTO [Product] ([StockCode], [Description], [Category], [UnitPrice]) VALUES\n"
