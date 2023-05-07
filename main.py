@@ -269,7 +269,7 @@ companies = [
     (30, 'Pizza Hut', 'Plano, TX', 'contact@pizzahut.com'),
 ]
 
-products = [{**product, "Price": random.choice(list(range(3, 200000)))} for product in products ]
+products = [{**product, "Price": random.choice(list(range(3, 20000)))} for product in products ]
 
 payment_methods = [
         "Credit Card",
