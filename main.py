@@ -301,11 +301,14 @@ def str_time_prop(start, end, time_format, prop):
 def random_date(start, end, prop):
     return str_time_prop(start, end, '%m/%d/%Y %I:%M %p', prop)
 
-def insert_into_sales_channel(n):
     return f"""
-INSERT INTO [SalesChannel] ([ChannelID], [ChannelName], [Location], [ContactDetails])
-          VALUES {", ".join([f"({i}, 'Channel {i}', 'Location {i}', 'Contact {i}')" for i in range(1, n+1)])};
-          """
+def insert_into_sales_channel():
+    result = "INSERT INTO [SalesChannel] ([ChannelName], [CityID], [ContactDetails]) VALUES"
+
+    for company in companies:
+        result += f"\n\t('{company[1]}', {random.choice(list(range(1,201)))}, '{company[3]}'),"
+
+    return result[:-1] + ";"
 
 def insert_into_customer(n):
     result = "INSERT INTO [Customer] ([CustomerID], [FullName], [Country], [City], [Age], [Gender]) VALUES\n"
