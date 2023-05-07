@@ -348,10 +348,10 @@ def insert_into_order(n):
     return result[:-2] + ";"
 
 def insert_into_order_item(n):
-    result = "INSERT INTO [OrderItem] ([OrderID], [ProductStockCode], [Quantity]) VALUES\n"
+    result = "INSERT INTO [OrderItem] (InvoiceNo, ProductStockCode, Quantity) VALUES\n"
     pairs = set()
     while len(pairs) < n:
-        pair = f"{random.choice(list(range(1, 250 + 1)))}, {random.choice(list(range(0, 45 + 1)))}"
+        pair = f"{random.choice(list(range(1, 1000 + 1)))}, {random.choice(list(range(1, 50 + 1)))}"
         pairs.add(pair)
     for pair in pairs:
         result += f"\t({pair}, {random.choice(list(range(1, 10 + 1)))}),\n"
