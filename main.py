@@ -361,4 +361,10 @@ def insert_into_order_item(n):
     return result + ";"
 
 if __name__ ==  "__main__":
-    print(insert_into_order_item(400))
+    print(insert_cities())
+    print(insert_countries())
+    print(insert_into_customer(10))
+    print(insert_into_sales_channel())
+    print(insert_into_product())
+    print(insert_into_order(10))
+    print(insert_into_order_item(20))
