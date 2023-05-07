@@ -331,16 +331,15 @@ def insert_into_customer(n):
     return result[:-2] + ";"
 
 def insert_into_product():
-    result = "INSERT INTO [Product] ([StockCode], [Description], [Category], [UnitPrice]) VALUES\n"
+    result = "INSERT INTO [Product] ([Description], [Category], [UnitPrice]) VALUES\n"
 
     # enumrate on products
-    for i, p in enumerate(products):
-        product = p
+    for product in products:
         product_name = product["Product Name"].replace("'", "")
         category = product["Category"].replace("'", "")
-        unit_price = product["Price"]
-        result += f"({i}, '{product_name}', '{category}', {unit_price}),\n"
-    return result + ";"
+        unit_price = float(product["Price"])
+        result += f"\t('{product_name}', '{category}', {unit_price}),\n"
+    return result[:-2] + ";"
 
 def insert_into_order(n):
     result = "INSERT INTO [Order] ([InvoiceNo], [CustomerID], [ChannelID], [InvoiceDate], [PaymentMethod]) VALUES\n"
