@@ -342,10 +342,10 @@ def insert_into_product():
     return result[:-2] + ";"
 
 def insert_into_order(n):
-    result = "INSERT INTO [Order] ([InvoiceNo], [CustomerID], [ChannelID], [InvoiceDate], [PaymentMethod]) VALUES\n"
-    for i in range(1, n+1):
-        result += f"\t({i}, {random.choice(list(range(1, 250 + 1)))}, {random.choice(list(range(1, 30 + 1)))}, '{random_date('1/1/2016 1:30 PM', '1/1/2023 4:50 AM', random.random())}', '{random.choice(payment_methods)}'),\n"
-    return result + ";"
+    result = "INSERT INTO [Order] ([CustomerID], [ChannelID], [InvoiceDatetime], [PaymentMethod]) VALUES\n"
+    for _ in range(1, n+1):
+        result += f"\t({random.choice(list(range(1, 1000 + 1)))}, {random.choice(list(range(1, 30 + 1)))}, '{random_date('1/1/2016 1:30 PM', '1/1/2023 4:50 AM', random.random())}', '{random.choice(payment_methods)}'),\n"
+    return result[:-2] + ";"
 
 def insert_into_order_item(n):
     result = "INSERT INTO [OrderItem] ([OrderID], [ProductStockCode], [Quantity]) VALUES\n"
