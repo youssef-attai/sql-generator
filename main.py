@@ -1,6 +1,9 @@
 import random
 import time
 
+NL = "\n"
+TB = "\t"
+
 M = 'M'
 F = 'F'
 
