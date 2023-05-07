@@ -996,7 +996,8 @@ INSERT INTO [OrderItem] (InvoiceNo, ProductStockCode, Quantity) VALUES
 	(785, 47, 10),
 	(514, 18, 5),
 	(590, 2, 4),
-	(25, 34, 5),
+	(25, 34, 5);
+INSERT INTO [OrderItem] (InvoiceNo, ProductStockCode, Quantity) VALUES
 	(465, 31, 1),
 	(349, 21, 6),
 	(851, 40, 4),
@@ -1996,6 +1997,4 @@ INSERT INTO [OrderItem] (InvoiceNo, ProductStockCode, Quantity) VALUES
 	(459, 18, 10),
 	(330, 21, 1),
 	(797, 13, 1),
-	(905, 29, 2),
-	(230, 30, 1),
 	(448, 43, 8);
