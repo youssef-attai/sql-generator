@@ -301,7 +301,19 @@ def str_time_prop(start, end, time_format, prop):
 def random_date(start, end, prop):
     return str_time_prop(start, end, '%m/%d/%Y %I:%M %p', prop)
 
+def insert_countries():
     return f"""
+INSERT INTO [dbo].[Country]
+	(Country) VALUES 
+{f", {NL}".join([f"{TB}('{country}')" for country in cities])};
+"""
+
+def insert_cities():
+    return f"""INSERT INTO [dbo].[City]
+    (CountryID, City) VALUES
+    {f", {NL}".join([f"{TB}({i}, '{city}')" for i, country in enumerate(cities, 1) for city in cities[country]])};
+"""
+
 def insert_into_sales_channel():
     result = "INSERT INTO [SalesChannel] ([ChannelName], [CityID], [ContactDetails]) VALUES"
 
