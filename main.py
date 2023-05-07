@@ -236,6 +236,37 @@ products = [
          "Product Name": "AirBuds - True Wireless Earbuds"},
 ]
 
+companies = [
+    (1, 'Amazon', 'Seattle, WA', 'contact@amazon.com'),
+    (2, 'eBay', 'San Jose, CA', 'contact@ebay.com'),
+    (3, 'Walmart', 'Bentonville, AR', 'contact@walmart.com'),
+    (4, 'Alibaba', 'Hangzhou, China', 'contact@alibaba.com'),
+    (5, 'Etsy', 'Brooklyn, NY', 'contact@etsy.com'),
+    (6, 'Target', 'Minneapolis, MN', 'contact@target.com'),
+    (7, 'Best Buy', 'Richfield, MN', 'contact@bestbuy.com'),
+    (8, 'Costco', 'Issaquah, WA', 'contact@costco.com'),
+    (9, 'Home Depot', 'Atlanta, GA', 'contact@homedepot.com'),
+    (10, 'Lowes', 'Mooresville, NC', 'contact@lowes.com'),
+    (11, 'Macys', 'New York, NY', 'contact@macys.com'),
+    (12, 'Nordstrom', 'Seattle, WA', 'contact@nordstrom.com'),
+    (13, 'Gap', 'San Francisco, CA', 'contact@gap.com'),
+    (14, 'Nike', 'Beaverton, OR', 'contact@nike.com'),
+    (15, 'Adidas', 'Herzogenaurach, Germany', 'contact@adidas.com'),
+    (16, 'Zara', 'Arteixo, Spain', 'contact@zara.com'),
+    (17, 'H&M', 'Stockholm, Sweden', 'contact@hm.com'),
+    (18, 'Forever 21', 'Los Angeles, CA', 'contact@forever21.com'),
+    (19, 'American Eagle Outfitters', 'Pittsburgh, PA', 'contact@ae.com'),
+    (20, 'Sephora', 'San Francisco, CA', 'contact@sephora.com'),
+    (21, 'Ulta Beauty', 'Bolingbrook, IL', 'contact@ultabeauty.com'),
+    (22, 'CVS', 'Woonsocket, RI', 'contact@cvs.com'),
+    (23, 'Walgreens', 'Deerfield, IL', 'contact@walgreens.com'),
+    (24, 'Starbucks', 'Seattle, WA', 'contact@starbucks.com'),
+    (25, 'Dunkin', 'Canton, MA', 'contact@dunkin.com'),
+    (26, 'McDonalds', 'Chicago, IL', 'contact@mcdonalds.com'),
+    (27, 'Burger King', 'Miami, FL', 'contact@burgerking.com'),
+    (28, 'Subway', 'Milford, CT', 'contact@subway.com'),
+    (29, 'Dominos Pizza', 'Ann Arbor, MI', 'contact@dominos.com'),
+    (30, 'Pizza Hut', 'Plano, TX', 'contact@pizzahut.com'),
 ]
 
 products = [{**product, "Price": random.choice(list(range(3, 200000)))} for product in products ]
