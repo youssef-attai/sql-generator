@@ -1,4 +1,8 @@
 import datetime
+import random
+
+from names import generate_random_name, NameType
+from emails import generate_random_email
 
 N1 = "\n" * 1
 N2 = "\n" * 2
@@ -24,7 +28,8 @@ def prepare_for_insert(value):
 
 
 def check_before_insert(table, data):
-    assert len(table.columns) == len(data), "Number of columns and data must match"
+    assert len(table.columns) == len(
+        data), "Number of columns and data must match"
     return True
 
 
@@ -58,8 +63,15 @@ class Table:
         self.columns = columns
 
 
-table = Table("users", ["name", "age", "email"])
+if __name__ == "__main__":
+    table = Table("users", ["id", "name", "gender", "email"])
+    rows = []
+    for i in range(1, 100):
+        gender = random.choice([NameType.MALE, NameType.FEMALE])
+        name = generate_random_name(gender, 2)
+        email = generate_random_email(name)
+        mf = "M" if gender == NameType.MALE else "F"
 
-data = ["John", 25, "john@example.com"]
+        rows.append([i, name, mf, email])
 
-print(insert_multiple_into_table(table, [data, data, data]))
+    print(insert_multiple_into_table(table, rows))
