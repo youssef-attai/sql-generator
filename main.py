@@ -24,8 +24,7 @@ def prepare_for_insert(value):
 
 
 def check_before_insert(table, data):
-    assert len(table.columns) == len(
-        data), "Number of columns and data must match"
+    assert len(table.columns) == len(data), "Number of columns and data must match"
     return True
 
 
