@@ -2,10 +2,12 @@ import json
 import random
 import enum
 
+
 class NameType(enum.Enum):
     MALE = 1
     FEMALE = 2
     LAST = 3
+
 
 names = dict()
 
@@ -18,6 +20,7 @@ with open("female-names.json", "r") as f:
 
 with open("last-names.json", "r") as f:
     names[NameType.LAST] = json.loads(f.read())["names"]
+
 
 def generate_random_name(gender: NameType, length: int):
     assert gender == NameType.MALE or gender == NameType.FEMALE, "Invalid gender"
